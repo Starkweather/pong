@@ -1,4 +1,4 @@
-// Global variables for the ball
+
 float ball_x;
 float ball_y;
 float ball_dir = 1; // Direction in x 
@@ -11,8 +11,7 @@ var paddle_height = 40;
 
 var dist_wall = 8;
 
-// Adding total hits here...
-//float total = 0;
+float total = 0;
 float highscore = 0;
 float score = 0;
 
@@ -51,18 +50,13 @@ void draw() {
 
     if((ball_x > paddle_x_edge) && (ball_y > paddle_y - paddle_height - ball_size) && 
        (ball_y < paddle_y + paddle_height + ball_size) && (ball_dir>0)) {
-
         // If we hit the paddle... change direction
         ball_dir *= -1;
-
         // Send a message to the main page updating the score...
         score += 1;
         document.getElementById("score").innerHTML = "Score = " + score;
-
-        // Adding in the total hits here...
-        //total += 1;
-        //document.getElementById("total").innerHTML = "Total Hits = " + total;
-
+        total += 1;
+        document.getElementById("total").innerHTML = "Total Hits = " + total;
         if (score>highscore) {
           highscore = score;
           document.getElementById("highscore").innerHTML = "High Score = " + highscore;
