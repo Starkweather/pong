@@ -27,8 +27,6 @@ void setup() {
 
 void draw() {
     // Background color... RGB
-    background
-@keyframes example {
     0%   {background-color: red; left:0px; top:0px;}
     25%  {background-color: yellow; left:200px; top:0px;}
     50%  {background-color: blue; left:200px; top:200px;}
